@@ -2,6 +2,8 @@
     <div class="pro container-fluid">
         <div class="row box">
             <div class="col-lg-3 title">
+                <h1>歡迎回來!!<label>{{$store.state.Member[0].username}}</label></h1>
+                <h1>目前的作品有:</h1>
                 <div class="title-1" v-for="c in animeData" :key="c.ID">
                     <h2>{{ c.Title }}</h2>
                 </div>
@@ -12,7 +14,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{c.Title}}</h5>
                                 <p class="card-text">{{c.Date}}</p>
-                                <p class="card-text">{{c.Type[0]}}</p>
+                                <p class="card-text">{{c.Type[0]}},{{c.Type[1]}},{{c.Type[2]}}</p>
                                 <a :href="c.Url" class="btn card-botton btn-outline-warning">官網</a>
                             </div>
                     </div>
@@ -42,8 +44,20 @@ export default {
             err => {
                 console.log(err.message, '请求失败');
             });
-        },
+            console.log('zxc',this.$store.state);
+    },
+
+    beforeRouteEnter(to,from,next){
+        next(vm=>{
+            if(vm.$store.state.Member[0] !== undefined){
+                console.log('成功');
+            }else{
+                console.log('失敗');
+            }
+        })
+    }
 }
+
 </script>
 
 <style scoped>
@@ -57,9 +71,17 @@ export default {
 .box{
 
 }
-
+h1{
+    color: white;
+    font-size: 40px;
+}
+h1 label{
+    font-weight: 600;
+}
 h2{
     color: orange;
+    font-size: 20px;
+    text-decoration: underline;
 }
 
 .list{

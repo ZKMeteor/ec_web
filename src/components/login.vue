@@ -16,6 +16,7 @@
                   </div>
                   <div class="forget">
                       <label for="btncheck"><input type="checkbox" id="btncheck">Click Me</label>
+                      <router-link to="/">Register</router-link>
                   </div>
                   <button @click="log">log in</button>                        
               </form>
@@ -38,7 +39,7 @@ export default {
       if(this.$store.state?.Member[0] == undefined) return alert('請註冊帳號')
       if( this.account==this.$store.state?.Member[0].account && this.password ==this.$store.state?.Member[0].password){
         alert('登入成功')
-        this.$router.push('/login/product')
+        this.$router.push('/product')
       } else if(this.account !== this.$store.state?.Member[0]?.account ){
         alert('帳號錯誤')
       } else if(this.password !== this.$store.state?.Member[0]?.password){
@@ -143,7 +144,6 @@ input:valid ~ label{
 }
 
 .forget a{
-    font-weight: 600;
     color: white;
     text-decoration: none;
 }

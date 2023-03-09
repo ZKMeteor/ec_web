@@ -8,9 +8,9 @@
             <input type="text" placeholder="請輸入動漫名稱">
         </div> -->
         <div class=" top-3">
-            <router-link to="/" active-class="active" >Register</router-link>
-            <router-link to="/login" active-class="active">Log in</router-link>
-            <router-link :to="{name:'product'}" active-class="active">Favorite</router-link>
+            <router-link :to="{name:'product'}" active-class="active">home</router-link>
+            <router-link :to="{name:'product'}" active-class="active">製作中</router-link>
+            <router-link :to="{name:'product'}" active-class="active">製作中</router-link>
         </div>
     </div>
 </div>

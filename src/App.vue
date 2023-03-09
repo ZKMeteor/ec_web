@@ -13,6 +13,7 @@ import top from './components/top.vue'
 import login from './components/login.vue'
 import home from './components/home.vue'
 import create from './components/create.vue'
+import product from './components/product.vue'
 
 export default {
   name: 'App',
@@ -20,7 +21,8 @@ export default {
     login,
     home,
     top,
-    create
+    create,
+    product
   },
   data(){
     return{

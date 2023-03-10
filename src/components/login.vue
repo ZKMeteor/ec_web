@@ -36,7 +36,10 @@ export default {
   },
   methods:{
     log(){
-      if(this.$store.state?.Member[0] == undefined) return alert('請註冊帳號')
+      if(this.$store.state?.Member[0] == undefined) {
+          alert('請註冊帳號')
+          this.$router.push('/')
+        }
       if( this.account==this.$store.state?.Member[0].account && this.password ==this.$store.state?.Member[0].password){
         alert('登入成功')
         this.$router.push('/product')

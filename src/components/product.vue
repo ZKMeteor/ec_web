@@ -1,23 +1,26 @@
 <template>
-    <div class="pro container-fluid">
-        <div class="row box">
-            <div class="col-lg-3 title">
-                <h1>歡迎回來!!<label>{{$store.state.Member[0].username}}</label></h1>
-                <h1>目前的作品有:</h1>
-                <div class="title-1" v-for="c in animeData" :key="c.ID">
-                    <h2>{{ c.Title }}</h2>
-                </div>
-            </div>
-            <div class="col-lg-9 list ">
-                    <div v-for="c in animeData" :key="c.ID" class="card text-center" style="width: 12rem;">
-                            <img :src="c.Pic" class="card-img-top" alt="...">
-                            <div class="card-body">
-                                <h5 class="card-title">{{c.Title}}</h5>
-                                <p class="card-text">{{c.Date}}</p>
-                                <p class="card-text">{{c.Type[0]}},{{c.Type[1]}},{{c.Type[2]}}</p>
-                                <a :href="c.Url" class="btn card-botton btn-outline-warning">官網</a>
-                            </div>
+    <div class="container-fluid">
+        <top></top>
+        <div class="pro">
+            <div class="row box">
+                <div class="col-lg-3 title">
+                    <h1>歡迎回來!!<label>{{$store.state.Member[0].username}}</label></h1>
+                    <h1>目前的作品有:</h1>
+                    <div class="title-1" v-for="c in animeData" :key="c.ID">
+                        <h2>{{ c.Title }}</h2>
                     </div>
+                </div>
+                <div class="col-lg-9 list ">
+                    <div v-for="c in animeData" :key="c.ID" class="card text-center" style="width: 12rem;">
+                        <img :src="c.Pic" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{c.Title}}</h5>
+                            <p class="card-text">{{c.Date}}</p>
+                            <p class="card-text">{{c.Type[0]}},{{c.Type[1]}},{{c.Type[2]}}</p>
+                            <a :href="c.Url" class="btn card-botton btn-outline-warning">官網</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -25,9 +28,10 @@
 
 <script>
 import axios from 'axios'
-
+import top from './top.vue'
 export default {
     name: 'Product',
+    components:{top},
     data() {
         return {
             animeData: null,

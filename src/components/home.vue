@@ -1,5 +1,5 @@
 <template>
-  <div class="container-fluid home">
+  <div class="container-fluid home animate__animated animate__fadeIn">
     <top></top>
     <div class="box">
         <div class="title">
@@ -13,7 +13,7 @@
     <div class="container-fluid box2">
         <h2 style="text-align:center; ">About</h2>
         <div class="row about">
-            <div class="contant-1 col-lg-5">
+            <div class="contant col-lg-5 animate__animated " id="contant">
                 <h2>網站設計理念</h2>
                 <p style="border-bottom:1px solid white;padding-bottom:30px;">
                     這個網站的設計靈感源自喜愛觀看動漫、常常瀏覽一些動畫相關網站（以圖片為例），並基於此興趣設計。
@@ -37,6 +37,33 @@ import top from '../components/top.vue'
 export default {
     name:'home',
     components:{top},
+    mounted(){
+        window.addEventListener('scroll', this.handleScroll) 
+    },
+    methods: {
+    handleScroll() {
+      // 取得目標元素的位置
+      let targetElement = document.querySelector('.contant');
+      let targetPosition = targetElement.getBoundingClientRect().top;
+      console.log('123');
+
+      // 取得當前捲軸的位置
+      let scrollPosition =  window.scrollY;
+
+      // 當捲軸滾動到目標元素的位置時，執行特效的程式碼
+      if (scrollPosition > targetPosition) {
+        // 在這裡加入特效的程式碼
+        targetElement.classList.add('animate__fadeInDown');
+        targetElement.style.opacity = '1'
+      } else {
+        targetElement.classList.remove('animate__fadeInDown');
+        targetElement.style.opacity = '0'
+      }
+    }
+  },
+  beforeDestroy() {
+    window.removeEventListener('scroll', this.handleScroll)
+  }
 }
 </script>
 
@@ -116,14 +143,15 @@ h2{
     align-items: center;
 }
 
-.contant-1{
+.contant{
     padding-right: 10px;
+    opacity: 1;
 }
-.contant-1 a{
+.contant a{
     color: white;
 }
 
-.contant-1 a:hover{
+.contant a:hover{
     color: black;
     text-decoration: underline;
 }

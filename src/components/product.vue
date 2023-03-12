@@ -1,5 +1,5 @@
 <template>
-    <div class="container-fluid sz">
+    <div class="container-fluid sz animate__animated animate__fadeIn">
         <top></top>
         <div class="pro">
             <div class="row box">

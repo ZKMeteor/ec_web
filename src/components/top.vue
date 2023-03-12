@@ -9,10 +9,10 @@
         </div>
         <div class=" top-3">
             <div class="tag">
-            <router-link :to="{name:'home'}" active-class="active">home</router-link>
+            <router-link :to="{name:'home'}" active-class="active">Home</router-link>
             </div>
             <div class="tag">
-            <router-link :to="{name:'product'}" active-class="active">anime</router-link>
+            <router-link :to="{name:'product'}" active-class="active">Anime</router-link>
             </div>
             <div class="tag">    
                 <router-link :to="{name:'product'}" active-class="active">製作中</router-link>
@@ -38,11 +38,10 @@ export default {
     width: 100%;
     position: fixed;
     backdrop-filter: blur(0px);
-    background-color: black;
+    background-color: rgba(12, 9, 9, 0.336);
     color: white;
     height: 70px;
     z-index: 100;
-    opacity: 0.3;
 }
 .box{
     height: 80px;
@@ -69,7 +68,7 @@ export default {
 .top-3 a{
     color: white;
     font-size: 25px;
-
+    position: relative;
 }
 
 .top-3{
@@ -78,8 +77,24 @@ export default {
     justify-content: space-around;
 }
 .top-3 a:hover{
-    text-decoration: underline;
+    border-radius: 5px;
+    color: purple;
+    transform: translateY(-3px);
 }
+.top-3 a::after{
+    content:'';
+    position: absolute;
+    left: 0%;
+    right: 100%;
+    bottom: 1px;
+    border-bottom: 2px solid purple;
+    transition: .4s;
+}
+.top-3 a:hover::after{
+    left: 0;
+    right: 0;
+}
+
 h1{
     font-size: 40px;
     user-select: none;

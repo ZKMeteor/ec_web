@@ -46,11 +46,11 @@ export default {
     padding: 0;   
 }
 .app{
-  background:url(./assets/layout2bg.jpg)no-repeat;
+    background:url(./assets/layout2bg.jpg)no-repeat;
     background-position:center;
     background-size:auto;
     max-height: 100vh;
-    overflow:scroll;
+    overflow: auto;
     width: 100%;
 }
 </style>

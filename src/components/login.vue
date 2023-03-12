@@ -42,7 +42,7 @@ export default {
         }
       if( this.account==this.$store.state?.Member[0].account && this.password ==this.$store.state?.Member[0].password){
         alert('登入成功')
-        this.$router.push('/product')
+        this.$router.push('/home')
       } else if(this.account !== this.$store.state?.Member[0]?.account ){
         alert('帳號錯誤')
       } else if(this.password !== this.$store.state?.Member[0]?.password){

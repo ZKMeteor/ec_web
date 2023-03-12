@@ -1,10 +1,10 @@
 <template>
-    <div class="container-fluid">
+    <div class="container-fluid sz">
         <top></top>
         <div class="pro">
             <div class="row box">
                 <div class="col-lg-3 title">
-                    <h1>歡迎回來!!<label>{{$store.state.Member[0].username}}</label></h1>
+<!--                     <h1>歡迎回來!!<label>{{$store.state.Member[0].username}}</label></h1> -->
                     <h1>目前的作品有:</h1>
                     <div class="title-1" v-for="c in animeData" :key="c.ID">
                         <h2>{{ c.Title }}</h2>
@@ -67,6 +67,12 @@ export default {
 <style scoped>
 *{
     text-decoration: none;
+
+}
+
+.sz{
+    padding: 0;
+    margin: 0;
 }
 .pro{
     padding: 100px 80px 30px 80px;

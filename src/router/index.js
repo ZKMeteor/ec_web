@@ -1,12 +1,17 @@
 import VueRouter from 'vue-router'
-import login from '../components/login.vue'
 import create from '../components/create.vue'
+import login from '../components/login.vue'
 import home from '../components/home.vue'
 import product from '../components/product.vue'
 
 export default new VueRouter({
 /*     mode:'history', */
     routes:[
+        {
+            name:'create',
+            path:'/',
+            component:create,
+        },
         {
             name:'login',
             path:'/login',
@@ -16,11 +21,6 @@ export default new VueRouter({
             name:'home',
             path:'/home',
             component:home,
-        },
-        {
-            name:'create',
-            path:'/',
-            component:create,
         },
         {
             name:'product',

@@ -20,8 +20,8 @@
                     此網站針對長期觀看動漫，但經常不知道該看什麼的使用者所設計。網站將動漫作品分類，
                     可依據類型挑選想看的動漫類型，每個作品都會附上該作品網站連結，方便瞭解該作品的詳細資訊。</p>
                 <p>本網站所使用之圖片來源自:<br>
-                <a ref="https://myself-bbs.com/portal.php">Myself 動漫</a><br>
-                <a ref="https://wall.alphacoders.com/">Wall Paperabyss</a>
+                <a href="https://myself-bbs.com/portal.php">Myself 動漫</a><br>
+                <a href="https://wall.alphacoders.com/">Wall Paperabyss</a>
                 </p>
             </div>
             <div class="contant-2 col-lg-7">
@@ -44,6 +44,7 @@ export default {
 *{
     padding: 0;
     margin: 0;
+    text-decoration: none;
 }
 .top-3 a{
     color: orange;
@@ -118,6 +119,15 @@ h2{
 .contant-1{
     padding-right: 10px;
 }
+.contant-1 a{
+    color: white;
+}
+
+.contant-1 a:hover{
+    color: black;
+    text-decoration: underline;
+}
+
 .contant-2{
 
 }

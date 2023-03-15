@@ -4,8 +4,9 @@
         <div class="pro">
             <div class="row box">
                 <div class="col-lg-3 title">
-<!--                     <h1>歡迎回來!!<label>{{$store.state.Member[0].username}}</label></h1> -->
-                    <h1>目前的作品有:</h1>
+                    <h1 v-if="$store.state.Member[0]">歡迎回來!{{$store.state.Member[0].username}}</h1>
+                    <h1 v-else>尚未登入</h1>
+                    <h1>目前的作品有:{{animeData.length}}個</h1>
                     <div class="title-1" v-for="c in animeData" :key="c.ID">
                         <h2>{{ c.Title }}</h2>
                     </div>
@@ -42,16 +43,13 @@ export default {
     mounted() {
         axios.get('./anime.json').then(
             response  => {
-                console.log(response.data);
                 this.animeData = response.data;
             },
             err => {
                 console.log(err.message, '请求失败');
             });
-            console.log('zxc',this.$store.state);
     },
-
-    beforeRouteEnter(to,from,next){
+/*     beforeRouteEnter(to,from,next){
         next(vm=>{
             if(vm.$store.state.Member[0] !== undefined){
                 console.log('成功');
@@ -59,7 +57,7 @@ export default {
                 console.log('失敗');
             }
         })
-    }
+    } */
 }
 
 </script>

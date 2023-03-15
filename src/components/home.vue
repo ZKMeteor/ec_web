@@ -6,12 +6,12 @@
             <h1>Anime <br>Database</h1>
             <p>Let you find your favorite animation</p>
             <div class="seclect">
-                <router-link :to="{name:'product'}" active-class="active">Search Anime</router-link>
+                    <router-link :to="{name:'product'}" active-class="active">Search Anime</router-link>
             </div>
         </div>
     </div>
     <div class="container-fluid box2">
-        <h2 style="text-align:center; ">About</h2>
+        <h2 style="text-align:center; ">About Web</h2>
         <div class="row about">
             <div class="contant col-lg-5 animate__animated " id="contant">
                 <h2>網站設計理念</h2>
@@ -37,7 +37,7 @@ import top from '../components/top.vue'
 export default {
     name:'home',
     components:{top},
-    mounted(){
+    created(){
         window.addEventListener('scroll', this.handleScroll) 
     },
     methods: {
@@ -123,6 +123,12 @@ h2{
     border-radius: 15px;
     text-align: center;
 }
+
+.seclect:hover{
+    background-color: black;
+    color: white;
+    border: 0;
+}
 .seclect a{
     text-decoration: none;
     color:white;
@@ -133,7 +139,7 @@ h2{
 .box2{
     width: 100%;
     padding: 30px 100px;
-    background-color: rgb(155, 124, 31);
+    background-color: rgb(146, 110, 1);
 }
 
 .about{
@@ -156,8 +162,8 @@ h2{
     text-decoration: underline;
 }
 
-.contant-2{
-
+.contant-2 img{
+    border-radius: 5px;
 }
 
 </style>

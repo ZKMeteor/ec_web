@@ -11,7 +11,6 @@ const actions = {
 const mutations = {
     Create(state,member){
         state.Member.push(member)
-        console.log('mutations',member)
     }
 }
 

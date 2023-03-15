@@ -15,7 +15,7 @@
             <router-link :to="{name:'product'}" active-class="active">Anime</router-link>
             </div>
             <div class="tag">    
-                <router-link :to="{name:'product'}" active-class="active">製作中</router-link>
+                <router-link :to="{name:'create'}" active-class="active">login</router-link>
             </div>
         </div>
     </div>
@@ -104,7 +104,8 @@ h2{
 }
 .active{
     text-decoration: underline;
-    color: purple;
+    font-weight: 600;
+    color: black;
 }
 
 @media screen and (max-width: 768px){

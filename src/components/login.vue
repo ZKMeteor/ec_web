@@ -16,7 +16,7 @@
                   </div>
                   <div class="forget">
                       <label for="btncheck"><input type="checkbox" id="btncheck">Click Me</label>
-                      <router-link to="/">Register</router-link>
+                      <router-link to="/create">Register</router-link>
                   </div>
                   <button @click="log">log in</button>                        
               </form>
@@ -42,7 +42,7 @@ export default {
         }
       if( this.account==this.$store.state?.Member[0].account && this.password ==this.$store.state?.Member[0].password){
         alert('登入成功')
-        this.$router.push('/home')
+        this.$router.push('/')
       } else if(this.account !== this.$store.state?.Member[0]?.account ){
         alert('帳號錯誤')
       } else if(this.password !== this.$store.state?.Member[0]?.password){

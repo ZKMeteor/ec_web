@@ -46,7 +46,7 @@
   },
   {
     "ID": 6,
-    "Title": "排球少年 Haikyu",
+    "Title": "排球少年",
     "Type": ["校園","運動","競技"],
     "Url": "http://www.j-haikyu.com/anime/index.html",
     "Pic": "https://myself-bbs.com/data/attachment/forum/201905/13/1553211vjbc5hgczjv7kji.jpg",
@@ -88,5 +88,14 @@
   "Pic": "https://myself-bbs.com/data/attachment/forum/201812/26/164832rcl739efrlrec3xn.jpg",
   "Star": 4.1,
   "Date": "2014/10/05"
+ },
+ {
+  "ID": 11,
+  "Title": "可塑性記憶",
+  "Type": ["胃痛","戀愛","治癒"],
+  "Url": "https://www.plastic-memories.jp/",
+  "Pic": "https://myself-bbs.com/data/attachment/forum/201504/04/131347vzo0igzotgllzom0.jpg",
+  "Star": 4.8,
+  "Date": "2015/04/04"
  }
 ]

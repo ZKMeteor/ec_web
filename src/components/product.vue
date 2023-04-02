@@ -6,13 +6,14 @@
                 <div class="col-lg-3 title">
                     <h1 v-if="$store.state.Member[0]">歡迎回來!{{$store.state.Member[0].username}}</h1>
                     <h1 v-else>尚未登入</h1>
+                    <h1>搜尋:<input type="text" v-model="search" class="search"></h1>
                     <h1>目前的作品有:{{animeData.length}}個</h1>
                     <div class="title-1" v-for="c in animeData" :key="c.ID">
                         <h2>{{ c.Title }}</h2>
                     </div>
                 </div>
                 <div class="col-lg-9 list ">
-                    <div v-for="c in animeData" :key="c.ID" class="card text-center" style="width: 12rem;">
+                    <div v-for="c in searchanime" :key="c.ID" class="card text-center">
                         <img :src="c.Pic" class="card-img-top" alt="...">
                         <div class="card-body">
                             <h5 class="card-title">{{c.Title}}</h5>
@@ -35,12 +36,20 @@ export default {
     components:{top},
     data() {
         return {
-            animeData: null,
+            animeData:[],
+            search:'',
         };
     },
     methods: {
     },
-    mounted() {
+    computed:{
+        searchanime(){
+            return this.animeData.filter(i => {
+                return i.Title.match(this.search) 
+            });
+        }
+    },
+    created() {
         axios.get('./anime.json').then(
             response  => {
                 this.animeData = response.data;
@@ -65,10 +74,10 @@ export default {
 <style scoped>
 *{
     text-decoration: none;
-
 }
 
 .sz{
+    height: 100vh;
     padding: 0;
     margin: 0;
 }
@@ -81,7 +90,17 @@ export default {
 }
 h1{
     color: white;
-    font-size: 40px;
+    font-size: 35px;
+}
+
+.search{
+    font-size: 25px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid sandybrown;
+    color: white;
+    padding: 2px;
 }
 h1 label{
     font-weight: 600;
@@ -96,6 +115,7 @@ h2{
    display: flex;
    flex-direction:row;
    flex-wrap: wrap;
+   padding: 0;
 }
 .title-1{
     display: flex;
@@ -103,6 +123,8 @@ h2{
 }
 
 .card{
+    height: 500px;
+    width: 200px;
     margin: 10px;
     border: none;
     outline: none;

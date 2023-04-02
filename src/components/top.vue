@@ -9,13 +9,20 @@
         </div>
         <div class=" top-3">
             <div class="tag">
-            <router-link :to="{name:'home'}" active-class="active">Home</router-link>
+            <router-link :to="{name:'home'}" active-class="active">
+                Home
+            </router-link>
             </div>
             <div class="tag">
-            <router-link :to="{name:'product'}" active-class="active">Anime</router-link>
+            <router-link :to="{name:'product'}" active-class="active">
+                Anime
+            </router-link>
             </div>
             <div class="tag">    
-                <router-link :to="{name:'create'}" active-class="active">login</router-link>
+                <router-link :to="{name:'create'}" active-class="active">
+                    login
+                    <ion-icon name="log-in-outline"></ion-icon>
+                </router-link>
             </div>
         </div>
     </div>

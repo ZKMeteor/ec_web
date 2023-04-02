@@ -39,6 +39,7 @@ export default {
     components:{top},
     created(){
         window.addEventListener('scroll', this.handleScroll) 
+
     },
     methods: {
     handleScroll() {
